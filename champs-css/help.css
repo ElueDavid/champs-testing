@@ -1,0 +1,344 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+
+:root {
+    --var-drkts-ble: #010d3b;
+    --var-dark-blue: #222572;
+    --var-fade-blue: #7476A6;
+
+    --var-brwnish-prple:#AF3C63;
+    --var-pink-prple:#EB81A5;
+
+    --var-box-brcle: #DAD9E7;
+
+    --var-white: #ffff;
+    --var-white2: #f2e5ea;
+
+    --var-black: #000;
+}
+
+body {
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    text-rendering: optimizeSpeed;
+    color: var(--var-white);
+}
+
+.dashboard {
+    display: flex;
+    height: auto;
+}
+
+.dashboard-side-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+    min-width: 180px;
+    height: 700px;
+    background-color: var(--var-white2);
+    overflow-x: hidden;
+    transition: all .5s;
+    position: sticky;
+    top: 0px;
+}
+
+.sidebar-logo {
+    max-width: 130px;
+    max-height: fit-content;
+    margin-bottom: 50px;
+}
+
+.sidebar-pages {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.sidebar-pages a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 5px 10px;
+    gap: 10px;
+    color: var(--var-dark-blue);
+    font-weight: 600;
+}
+
+.page-indication {
+    border-radius: 4px;
+    background-color: var(--var-fade-blue);
+}
+
+.sidebar-profile-content {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.assistance {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    border-top: 1px solid grey;
+    padding: 60px 10px 20px 10px;
+    margin: auto 0 30px 0;
+    gap: 20px;
+}
+
+.assistance a{
+    display: flex;
+    text-decoration: none;
+    padding: 5px 10px;
+    gap: 10px;
+    color: var(--var-brwnish-prple);
+    font-weight: 600;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+main nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.hamburger {
+    display: none;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    position: relative;
+    z-index: 200;
+    order: 2;
+}
+.hamburger.active .ham-span {
+    transition: all .5s;
+}
+.hamburger.active .hs2 {
+    width: 0px;
+}
+
+.hamburger.active .hs1 {
+    transform: rotate(45deg) translateY(11px);
+}
+.hamburger.active .hs3 {
+    transform: rotate(-45deg) translateY(-11px);
+}
+
+.ham-span {
+    width: 30px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: var(--var-dark-blue);
+    transition: all 2s;
+}
+
+.hs2 {
+    width: 20px;
+}
+
+.nav-description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--var-dark-blue);
+    order: 1;
+}
+.nav-description p:nth-of-type(1) {
+    font-weight: 600;
+}
+
+.nav-description p:nth-of-type(2) {
+    font-size: .8rem;
+    color: var(--var-pink-prple);
+}
+
+.nav-profile-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    order: 3;
+}
+
+.profile-notification {
+    max-height: 15px;
+    max-width: 15px;
+}
+
+.profile-picture {
+    max-height: 40px;
+    max-width: 40px;
+}
+
+.profile-name {
+    color: var(--var-dark-blue);
+    font-weight: 600;
+}
+
+
+.help-desk {
+    width: 100%;
+    background: linear-gradient(to bottom, #cfcede, #fce9f0);
+    border-radius: 20px 20px 0 0;
+    height: 100%;
+    padding: 30px 0 0 0;
+}
+
+.help-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--var-white);
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, #ff3478,#222572);
+    width: 90px;
+    height: 40px;
+    transition: all .6s;
+    margin: 0px 0 0 30px;
+}
+
+/* .help-btn:hover {
+    background: linear-gradient(to bottom right,#222572, #AF3C63);
+} */
+
+
+.help-description {
+    text-align: center;
+    margin: 20px auto;
+    color: var(--var-dark-blue);
+}
+
+.contact-mediums {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 70px;
+    border-bottom: 1px solid rgb(170, 170, 170);
+}
+
+.contact-mediums div {
+    display: flex;
+    /* background-color: red; */
+    width: fit-content;
+    padding: 0 0 0 30px;
+    gap: 10px;
+}
+
+.contact-mediums div figure, .contact-mediums div p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px;
+    border-radius: 15px;
+    background: linear-gradient(to bottom, #e6e4fa, #fce9f0);
+    color: var(--var-dark-blue);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.contact-mediums div figure {
+    padding: 13px 20px;
+}
+.contact-mediums div figure img {
+    max-height: 30px;
+    max-width: 30px;
+}
+
+form {
+    /* background-color: rgb(134, 101, 101); */
+    padding: 20px 20px 40px 30px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--var-dark-blue);
+}
+
+form textarea {
+    width: 40%;
+    min-width: 300px;
+    height: 150px;
+    padding: 5px;
+    outline: none;
+    border-image: linear-gradient(to bottom right, #222572, #EB81A5)1;
+    caret-color: var(--var-dark-blue);
+}
+
+form button {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--var-white);
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to bottom right, #AF3C63,#222572);
+    width: 100px;
+    height: 40px;
+    margin: 0 0 0 auto;
+}
+
+form button:hover {
+    background: linear-gradient(to bottom right,#222572, #AF3C63);
+}
+
+
+
+@media screen and (max-width: 840px) {
+    .sidebar-profile-content {
+        display: flex;
+    }
+    .nav-profile-content {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        position: relative;
+        z-index: 100px;
+    }
+
+    .dashboard-side-bar {
+        position: absolute;
+        top: 0px;
+        transform: translateX(-100%);
+    }
+    .dashboard-side-bar.active {
+        transform: translateX(0%);
+        box-shadow: 0 0 0 1000px rgba(8, 8, 56, 0.322);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    form button {
+        margin-top: 20px;
+    }
+}

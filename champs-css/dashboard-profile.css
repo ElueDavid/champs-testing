@@ -1,0 +1,346 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+
+:root {
+    --var-drkts-ble: #010d3b;
+    --var-dark-blue: #222572;
+    --var-fade-blue: #7476A6;
+
+    --var-brwnish-prple:#AF3C63;
+    --var-pink-prple:#EB81A5;
+
+    --var-box-brcle: #DAD9E7;
+
+    --var-white: #ffff;
+    --var-white2: #f2e5ea;
+
+    --var-black: #000;
+}
+
+body {
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    text-rendering: optimizeSpeed;
+    color: var(--var-white);
+}
+
+.dashboard {
+    display: flex;
+    height: fit-content;
+}
+
+.dashboard-side-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+    min-width: 180px;
+    height: 700px;
+    background-color: var(--var-white2);
+    overflow-x: hidden;
+    transition: all .5s;
+    position: sticky;
+    top: 0px;
+}
+
+.sidebar-logo {
+    max-width: 130px;
+    max-height: fit-content;
+    margin-bottom: 50px;
+}
+
+.sidebar-pages {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.sidebar-pages a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 5px 10px;
+    gap: 10px;
+    color: var(--var-dark-blue);
+    font-weight: 600;
+}
+
+.page-indication {
+    border-radius: 4px;
+    background-color: var(--var-pink-prple);
+}
+
+.sidebar-profile-content {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.assistance {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    border-top: 1px solid grey;
+    padding: 60px 10px 20px 10px;
+    margin: auto 0 30px 0;
+    gap: 20px;
+}
+
+.assistance a{
+    display: flex;
+    text-decoration: none;
+    padding: 5px 10px;
+    gap: 10px;
+    color: var(--var-brwnish-prple);
+    font-weight: 600;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+main nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.hamburger {
+    display: none;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    position: relative;
+    z-index: 200;
+    order: 2;
+}
+.hamburger.active .ham-span {
+    transition: all .5s;
+}
+.hamburger.active .hs2 {
+    width: 0px;
+}
+
+.hamburger.active .hs1 {
+    transform: rotate(45deg) translateY(11px);
+}
+.hamburger.active .hs3 {
+    transform: rotate(-45deg) translateY(-11px);
+}
+
+.ham-span {
+    width: 30px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: var(--var-dark-blue);
+    transition: all 2s;
+}
+
+.hs2 {
+    width: 20px;
+}
+
+.nav-description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--var-dark-blue);
+    order: 1;
+}
+.nav-description p:nth-of-type(1) {
+    font-weight: 600;
+}
+
+.nav-description p:nth-of-type(2) {
+    font-size: .8rem;
+    color: var(--var-pink-prple);
+}
+
+.nav-profile-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    order: 3;
+}
+
+.profile-notification {
+    max-height: 15px;
+    max-width: 15px;
+}
+
+.profile-picture {
+    max-height: 40px;
+    max-width: 40px;
+}
+
+.profile-name {
+    color: var(--var-dark-blue);
+    font-weight: 600;
+}
+
+.profile-interface {
+    width: 100%;
+    background: linear-gradient(to bottom, #cfcede, #fce9f0);
+    border-radius: 20px 20px 0 0;
+    height: 100%;
+    padding: 30px 30px 120px 30px;
+}
+
+.profile-interface-topbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.pi-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--var-white);
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, #ff3478,#222572);
+    width: 90px;
+    height: 40px;
+}
+
+.pi-pen {
+    display: block;
+}
+
+.pi-pen Img {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.profile-interface figure {
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+}
+
+.profile-interface figure .profile-pic{
+    max-width: 70px;
+    max-height: 70px;
+}
+
+.change-dp {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    margin: -20px 0 0 40px;
+}
+.change-dp img {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.pn2 {
+    text-align: center;
+    margin: 10px 0 40px 0;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+    column-gap: 50px;
+}
+
+.profile-info section{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 13px;
+    border-radius: 15px;
+    background: linear-gradient(to bottom, #e6e4fa, #fce9f0);
+    color: var(--var-dark-blue);
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 400px;
+    min-width: 250px;
+}
+
+@media screen and (max-width: 1100px){
+    /* body{
+        background-color: blue;
+    } */
+
+    .profile-info section {
+        width: 300px;
+    }
+}
+
+
+@media screen and (max-width: 910px) {
+    /* body{
+        background-color: rgb(166, 255, 0);
+    } */
+    .profile-info {
+        column-gap: 10px;
+    }
+    .profile-info section {
+        width: 290px;
+    }
+}
+@media screen and (max-width: 840px) {
+    /* body{
+        background-color: rgb(255, 0, 119);
+    } */
+
+    .sidebar-profile-content {
+        display: flex;
+    }
+    .nav-profile-content {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        position: relative;
+        z-index: 100px;
+    }
+
+    .dashboard-side-bar {
+        position: absolute;
+        top: 0px;
+        transform: translateX(-100%);
+    }
+    .dashboard-side-bar.active {
+        transform: translateX(0%);
+        box-shadow: 0 0 0 1000px rgba(8, 8, 56, 0.322);
+    }
+    .profile-info section {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    /* body {
+        background-color: brown;
+    } */
+    .profile-info section {
+        width: 100%;
+    }
+}

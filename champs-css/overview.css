@@ -1,0 +1,810 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+
+:root {
+    --var-drkts-ble: #010d3b;
+    --var-dark-blue: #222572;
+    --var-fade-blue: #7476A6;
+
+    --var-brwnish-prple:#AF3C63;
+    --var-pink-prple:#EB81A5;
+
+    --var-box-brcle: #DAD9E7;
+
+    --var-white: #ffff;
+    --var-white2: #f2e5ea;
+
+    --var-black: #000;
+}
+
+body {
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    text-rendering: optimizeSpeed;
+    color: var(--var-white);
+}
+
+.dashboard {
+    display: flex;
+    background-color: #f5f5f5;
+    /* background-color: red; */
+}
+
+.dashboard-side-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+    min-width: 180px;
+    height: 700px;
+    background-color: var(--var-white2);
+    overflow-x: hidden;
+    transition: all .5s;
+    position: sticky;
+    top: 0px;
+}
+
+.sidebar-logo {
+    max-width: 130px;
+    max-height: fit-content;
+    margin-bottom: 50px;
+}
+
+.sidebar-pages {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.sidebar-pages a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 5px 10px;
+    gap: 10px;
+    color: var(--var-dark-blue);
+    font-weight: 600;
+}
+
+.page-indication {
+    border-radius: 4px;
+    background-color: var(--var-pink-prple);
+}
+
+.sidebar-profile-content {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.assistance {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    border-top: 1px solid grey;
+    padding: 60px 10px 20px 10px;
+    margin: auto 0 30px 0;
+    gap: 20px;
+}
+
+.assistance a{
+    display: flex;
+    text-decoration: none;
+    padding: 5px 10px;
+    gap: 10px;
+    color: var(--var-brwnish-prple);
+    font-weight: 600;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+main nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.hamburger {
+    display: none;
+    align-items: center;
+    gap: 5px;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    position: relative;
+    z-index: 200;
+    order: 2;
+}
+.hamburger.active .ham-span {
+    transition: all .5s;
+}
+.hamburger.active .hs2 {
+    width: 0px;
+}
+
+.hamburger.active .hs1 {
+    transform: rotate(45deg) translateY(11px);
+}
+.hamburger.active .hs3 {
+    transform: rotate(-45deg) translateY(-11px);
+}
+
+.ham-span {
+    width: 30px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: var(--var-dark-blue);
+    transition: all 2s;
+}
+
+.hs2 {
+    width: 20px;
+}
+
+.nav-description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--var-dark-blue);
+    order: 1;
+}
+.nav-description p:nth-of-type(1) {
+    font-weight: 600;
+}
+
+.nav-description p:nth-of-type(2) {
+    font-size: .8rem;
+    color: var(--var-pink-prple);
+}
+
+.nav-profile-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    order: 3;
+}
+
+.profile-notification {
+    max-height: 15px;
+    max-width: 15px;
+}
+
+.profile-picture {
+    max-height: 40px;
+    max-width: 40px;
+}
+
+.profile-name {
+    color: var(--var-dark-blue);
+    font-weight: 600;
+}
+
+.overview-interface {
+    width: 100%;
+    /* background: linear-gradient(to bottom, 
+        #cfcede, 
+        #fce9f0); */
+    border-radius: 20px 20px 0 0;
+    height: 100%;
+    padding: 10px 10px 120px 10px;
+}
+
+.top-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 30px;
+    /* background-color: red; */
+}
+
+.account-space {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: var(--var-white);
+    color: var(--var-drkts-ble);
+    border-radius: 20px;
+    gap: 20px;
+}
+
+.account-space .travel-loan {
+    width: 70%;
+    min-width: 400px;
+    border-radius: 20px;
+    padding: 20px;
+    background: linear-gradient(to bottom right, 
+        #ffcddc
+       ,#a3a3bf
+    );
+}
+
+.travel-loan h2 {
+    text-align: center;
+    color: var(--var-dark-blue);
+}
+
+.travel-loan select {
+    display: block;
+    margin: 10px auto 30px auto;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--var-dark-blue);
+}
+
+.loan-amount1 {
+    color: red;
+    font-size: 1.4rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.loan-amount2 {
+    color: red;
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.account-detail {
+    display: flex;
+    gap: 3px;
+    color: var(--var-drkts-ble);
+    font-size: .9rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-left: 50px;
+}
+
+
+.champs-account {
+    /* background-color: blue; */
+    border-radius: 20px;
+    width: 40%;
+    min-width: 300px;
+    padding: 20px 0;
+}
+
+.champs-account h2 {
+    text-align: center;
+    color: var(--var-dark-blue);
+    margin-bottom: 50px;
+}
+
+.account-bal {
+    color: #2fff4e;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.champs-account-text {
+    font-size: .9rem;
+    color: grey;
+    padding: 0 10px 0 20;
+    margin-top: 90px;
+}
+
+.loan-area {
+    width: 30%;
+    min-width: 300px;
+    min-height: 400px;
+    background-color: coral;
+    border-radius: 20px;
+}
+
+
+.bottom-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.user-history {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: var(--var-white);
+    color: var(--var-drkts-ble);
+    border-radius: 20px;
+    width: 70%;
+    gap: 10px;
+}
+
+.transaction-history {
+    width: 300px;
+    padding: 20px 0;
+    /* background-color: blue; */
+}
+
+.transaction-history h2 {
+    padding: 0 10px;
+    text-align: center;
+    color: var(--var-dark-blue);
+}
+
+.transaction-history select {
+    display: block;
+    padding: 0 10px;
+    margin: 10px auto 30px auto;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--var-dark-blue);
+}
+
+.transaction-space {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    /* background-color: red; */
+    padding: 0 10px;
+}
+
+.ts-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.transaction-recipients {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.recipient-name {
+    font-size: .9rem;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.ts-group time {
+    font-size: .7rem;
+    opacity: 0.8;
+}
+
+.transaction-amount {
+    color: rgb(34, 255, 34);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.user-history .analytics {
+    width: 60%;
+    max-width: 470px;
+    /* min-width: 300px; */
+    border-radius: 20px;
+    padding: 10px;
+    background: linear-gradient(to bottom right, 
+        #ffcddc
+       ,#a3a3bf
+    );
+}
+
+.analytics h2 {
+    text-align: center;
+    color: var(--var-dark-blue);
+}
+
+.analytics .analytics-time {
+    display: block;
+    text-align: right;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--var-fade-blue);
+    padding-right: 10px;
+}
+
+.chart-space {
+    display: flex;
+    flex-direction: column; max-width: 100%;
+    width: 100%;
+    height: 300px;
+    overflow-x: scroll;
+}
+.chart-space::-webkit-scrollbar {
+    display: none;
+}
+
+.chart {
+    display: flex;
+    width: 100%;
+    gap: 4px;
+    height: 100%;
+    /* background-color: rgb(0, 255, 132); */
+}
+.millions-amount {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: .7rem;
+    font-weight: bold;
+    color: var(--var-drkts-ble);
+    text-align: right;
+    min-width: 30px;
+}
+
+.chart-box, .small-chart-box {
+    display: flex;
+    align-items: flex-end;
+    padding-left: 15px;
+    gap: 10px;
+    width: fit-content;
+    height: 100%;
+    border-left: 1px solid var(--var-drkts-ble);
+    border-bottom: 1px solid var(--var-drkts-ble);
+    /* background-color: blue; */
+}
+
+.chart-box span{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 24px;
+    min-width: 24px;
+    height: 110px;
+    background-color: #cbccd5;
+    border-radius: 5px 5px 0 0;
+}
+
+.chart-box span:nth-of-type(7) {
+    background: linear-gradient(to bottom, #222572, #cbccd5);
+    height: 150px;
+}
+
+.month-days {
+    display: flex;
+    gap: 10px;
+    font-size: .8rem;
+    font-weight: bold;
+    padding-left: 50px;
+    color: var(--var-drkts-ble);
+}
+
+.month-days p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 5px;
+    width: 24px;
+    min-width: 24px;
+    height: 20px;
+    min-height: 20px;
+}
+
+.loan-start-date{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-left: 30px;
+}
+
+.loan-start-date .blue-box {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(to bottom, #222572, #cbccd5);
+    border-radius: 3px;
+}
+.loan-start-date.small-circle  {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: var(--var-fade-blue);
+    border-radius: 50%;
+}
+
+.loan-start-date p{
+    color: var(--var-fade-blue);
+    font-size: .9rem;
+}
+
+
+.calendar {
+    width: 30%;
+    min-width: 300px;
+    min-height: 400px;
+    /* background-color: coral; */
+    border-radius: 20px;
+    box-shadow: 0 3px 4px 1px rgb(204, 204, 204);
+}
+
+.calendar-space {
+    width: 100%;
+    background-color: #e4e4ec;
+    border-radius: 20px;
+    padding-bottom: 5px;
+    box-shadow: 0 3px 5px 2px rgb(194, 194, 201);
+}
+
+.days {
+    display: flex;
+    justify-content: space-between;
+    color: var(--var-pink-prple);
+    padding: 10px;
+    border-bottom: 1px solid rgb(210, 206, 206);
+    margin-bottom: 20px;
+}
+
+.calendar .month-day {
+    padding: 0 10px;
+}
+
+.calendar-space .month-day:nth-of-type(2), 
+.calendar-space .month-day:nth-of-type(3), 
+.calendar-space .month-day:nth-of-type(4), 
+.calendar-space .month-day:nth-of-type(5),
+.calendar-space .month-day:nth-of-type(6)
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.calendar-space .month-day:nth-of-type(7) {
+    display: flex;
+    margin-bottom: 10px;
+    gap: 7.7%;
+}
+
+.month-day span {
+    width: fit-content;
+    padding: 2px;
+    color: var(--var-drkts-ble);
+    max-width: 30px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.first {
+    margin: 0 0 0 auto;
+    display: block;
+}
+
+.starts {
+    background-color: #7bed91;
+}
+
+.todays-date{
+    background-color: #8385af;
+}
+
+.end-date {
+    background-color: #ea777b;
+}
+
+.monthofyear {
+    color: var(--var-dark-blue);
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.date-indication {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 0 0;
+    padding: 0 10px;
+    font-size: .8rem;
+    color: var(--var-drkts-ble);
+}
+
+.date-indication section {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.date-indication section .box-indication {
+    width: 16px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.date-indication section:nth-of-type(1) .box-indication {
+    background-color: #7bed91;
+}
+.date-indication section:nth-of-type(2) .box-indication {
+    background-color: #ea777b;
+}
+.date-indication section:nth-of-type(3) .box-indication {
+    background-color: #7476A6;
+}
+
+
+
+
+@media screen and (max-width: 1310px) {
+    /* .dashboard {
+        background-color: red;
+    } */
+
+    .bottom-flex {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .bottom-flex .user-history{
+        width: 100%;
+        min-width: 300px;
+    }
+
+    .user-history .analytics {
+        max-width: 600px;
+        width: 60%;
+    }
+
+    .calendar-space .month-day:nth-of-type(7) {
+        gap: 8%;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    /* .top-flex {
+        background-color: blue;
+    } */
+
+    .account-space {
+        gap: 10px;
+    }
+
+    .top-flex .travel-loan {
+        width: 60%;
+        min-width: 300px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    /* .dashboard {
+        background-color: rgb(43, 0, 255);
+    } */
+    .top-flex {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    /* .top-flex {
+        background-color: orangered;
+    } */
+    .loan-area {
+        width: 60%;
+        min-width: 300px;
+    }
+}
+
+@media screen and (max-width: 1130px) {
+    /* .dashboard {
+        background-color: rgb(43, 0, 255);
+    } */
+
+    .user-history {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-history .analytics {
+        max-width: 700px;
+        width: 80%;
+    }
+    .user-history .transaction-history {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    /* .dashboard {
+        background-color: yellow;
+    } */
+    .user-history .analytics {
+        max-width: 500px;
+        width: 80%;
+    }
+    .user-history .transaction-history {
+        width: 70%;
+    }
+
+    .calendar {
+        width: 100%;
+    }
+    .calendar-space .month-day:nth-of-type(7) {
+        gap: 13%;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .sidebar-profile-content {
+        display: flex;
+    }
+    .nav-profile-content {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .dashboard-side-bar {
+        position: absolute;
+        top: 0px;
+        transform: translateX(-100%);
+    }
+    .dashboard-side-bar.active {
+        transform: translateX(0%);
+    }
+    .user-history .analytics {
+        max-width: 800px;
+        width: 100%;
+    }
+    .user-history .transaction-history {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 710px) {
+    /* .top-flex {
+        background-color: black;
+    } */
+    .account-space {
+        flex-direction: column;
+    }
+    .account-space .travel-loan{
+        width: 100%;
+    }
+    .account-space .champs-account  {
+        width: 100%;
+        padding: 20px 30px;
+    }
+}
+
+@media screen and (max-width: 600px) { 
+    .calendar-space .month-day:nth-of-type(7) {
+        gap: 10%;
+    }
+}
+
+
+@media screen and (max-width: 500px) { 
+    .loan-area {
+        width: 100%;
+    }
+    .user-history .transaction-history {
+        width: 100%;
+    }
+    .calendar {
+        width: 100%;
+    }
+    .calendar-space .month-day:nth-of-type(7) {
+        gap: 11%;
+    }
+}
+
+@media screen and (max-width: 450px) { 
+    .calendar-space .month-day:nth-of-type(7) {
+        gap: 9%;
+    }
+}

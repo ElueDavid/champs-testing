@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champs-landing-page</title>
+    <link rel="stylesheet" href="champs-css/style.css">
+    <link rel="icon" href="champs-images/champs-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    
+    <header>
+        <nav>
+           <img src="champs-images/champs-logoworking.png" alt="champs-logo" class="logo">
+           <div class="nav-btns">
+            <a href="#">
+                Create Profile
+            </a>
+            <a class="nav-btn" href="login-step1.html">
+                <img src="champs-images/click-img.png" alt="">
+                <p>
+                    Login
+                </p>
+           </a>
+           </div>
+        </nav>
+        <div class="preloader">
+            <img src="champs-images/champs-logo.png" alt="">
+            <div class="loader-area">
+                <h1>
+                    verifying
+                </h1>
+                <span class="span-1"></span>
+                <span class="span-2"></span>
+                <span class="span-3"></span>
+            </div>
+        </div>
+        <main>
+            <div class="social-links">
+                <a href="#">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+            <div class="content">
+                <h1>
+                    Champion Your Finance, Trust CHAMP.
+                </h1>
+                <a href="#">
+                    Champion Your Future
+                </a>
+            </div>
+        </main>
+        <section>
+            <div class="item-1">
+                <span>
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <p>LOANS</p>
+                </span>
+                <p class="item-description">
+                    (Proof Of Funds)
+                </p>
+            </div>
+            <div class="item-2">
+                <span>
+                    <i class="fa-solid fa-burger"></i>
+                    <p>FOOD LOANS</p>
+                </span>
+                <p class="item-description">
+                    Coming Soon!
+                </p>
+            </div>
+            <div class="item-3">
+                <span>
+                    <i class="fa-regular fa-credit-card"></i>
+                    <p>PAYMENTS</p>
+                </span>
+                <p class="item-description">
+                    Coming Soon!
+                </p>
+            </div>
+            <div class="item-4">
+                <span>
+                    <i class="fa-solid fa-swatchbook"></i>
+                    <p>THRIFTS</p>
+                </span>
+                <p class="item-description">
+                    Coming Soon!
+                </p>
+            </div>
+        </section>
+    </header>
+
+    <script>
+        var loader = document.querySelector(".preloader");
+        window.addEventListener("load", function () {
+            loader.style.display ="none";
+        });
+    </script>
+</body>
+</html>

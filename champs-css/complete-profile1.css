@@ -156,11 +156,32 @@ main {
     background: linear-gradient(to bottom,#8387ff ,#ffa9c6);
 }
 
-
-
 .form-space img {
     max-height: 150px;
     max-width: 150px;
+}
+
+.bank-type {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    color: var(--var-dark-blue);
+}
+
+.bank-type select {
+    width: 200px;
+    height: 35px;
+    border: 2px solid red;
+    border-radius: 5px;
+    border: double 2px transparent;
+    background-image: linear-gradient(#f6c9ff,#f6c9ff),
+    linear-gradient(to bottom right, #222572, #EB81A5);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    color: var(--var-dark-blue);
+    font-weight: 600;
+    /* padding: 0 5px; */
+    background-color: #f6c9ff;
 }
 
 form {
@@ -182,14 +203,20 @@ sup {
 }
 
 .input-area input, .input-area select {
-    display: block;
+    display: flex;
+    text-indent: 5px;
     outline: none;
     min-width: 300px;
     width: 45%;
     height: 40px;
-    border-image: linear-gradient(to bottom right, #222572, #EB81A5)1;
+    border: 2px solid red;
+    border-radius: 10px;
+    border: double 2px transparent;
+    background-image: linear-gradient(white,white),
+    linear-gradient(to bottom right, #222572, #EB81A5);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
     caret-color: var(--var-dark-blue);
-    padding-left: 5px;
 }
 
 .input-flex {

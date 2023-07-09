@@ -42,7 +42,7 @@
                     <img src="champs-images/question-mark-icon.png" alt="">
                     <p>Help</p>
                 </a>
-                <a href="sign-out.html">
+                <a href="login-step1.html">
                     <img src="champs-images/sign-out-icon.png" alt="">
                     <p>Sign-out</p>
                 </a>
@@ -151,7 +151,33 @@
                         </div>
                     </div>
                     <div class="loan-area">
-
+                        <h2>
+                            Current Loan amount
+                        </h2>
+                        <div class="loan-figure">
+                            &#8358; 10,000,000.00
+                        </div>
+                        <div class="loan-pay">
+                            <p>
+                                Payoff Date
+                            </p>
+                            <time>
+                                3rd July 2023
+                            </time>
+                        </div>
+                        <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>
+                        <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+                        <div id="container"></div>
+                        <div class="interest">
+                            <section>
+                                <p>Interest Percentage:</p>
+                                <p>3.5% Per month</p>
+                            </section>
+                            <section>
+                                <p>Interest Amount:</p>
+                                <p>&#8358;350,000.00</p>
+                            </section>
+                        </div>
                     </div>
                 </section>
                 <section class="bottom-flex">
@@ -442,6 +468,39 @@
             </div>
         </main>
     </div>
+    <script>
+        var bar = new ProgressBar.SemiCircle(container, {
+        strokeWidth: 6,
+        color: 'red',
+        trailColor: '#eee',
+        trailWidth: 6,
+        easing: 'easeInOut',
+        duration: 1400,
+        svgStyle: null,
+        text: {
+            value: '',
+            alignToBottom: false
+        },
+        
+        // Set default step function for all animate calls
+        step: (state, bar) => {
+            bar.path.setAttribute('stroke', state.color);
+            var value = Math.round(bar.value() * 30);
+            if (value === 0) {
+            bar.setText('');
+            } else {
+            bar.setText(value+" days left");
+            }
+    
+            bar.text.style.color = state.color;
+        }
+        });
+        bar.text.style.fontFamily = 'sans-serif';
+        bar.text.style.fontSize = '1.2rem';
+    
+        bar.animate(0.45);  // Number from 0.0 to 1.0
+    </script>
+    
     <script src="champs-js/overview.js"></script>
 </body>
 </html>

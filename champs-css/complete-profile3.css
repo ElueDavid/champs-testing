@@ -185,9 +185,14 @@ sup {
     min-width: 300px;
     width: 100%;
     height: 40px;
-    border-image: linear-gradient(to bottom right, #222572, #EB81A5)1;
-    caret-color: var(--var-dark-blue);
-    padding:0 5px;
+    text-indent: 5px;
+    border: 2px solid red;
+    border-radius: 10px;
+    border: double 2px transparent;
+    background-image: linear-gradient(white,white),
+    linear-gradient(to bottom right, #222572, #EB81A5);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 }
 
 .input-flex {

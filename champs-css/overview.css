@@ -309,12 +309,71 @@ main nav {
 }
 
 .loan-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 30%;
     min-width: 300px;
     min-height: 400px;
-    background-color: coral;
+    background-color: #fadbe6;
     border-radius: 20px;
+    padding: 10px;
 }
+.loan-area h2{
+    width: 100%;
+    color: var(--var-dark-blue);
+    margin-bottom: 30px;
+}
+
+.loan-area .loan-figure {
+    width: 100%;
+    color: red;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--var-fade-blue);
+    margin-bottom: 20px;
+}
+
+.loan-area .loan-pay {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--var-dark-blue);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+#container {
+    width: 200px;
+    height: 100px;
+    }
+
+svg {
+height: 120px;
+width: 200px;
+fill: none;
+stroke: red;
+stroke-width: 10;
+stroke-linecap: round; 
+}
+
+.interest {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    margin-top: 70px;
+}
+
+.interest section {
+    display: flex;
+    gap: 5px;
+    color: var(--var-dark-blue);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
 
 
 .bottom-flex {

@@ -467,7 +467,8 @@ main nav {
         top: 0px;
         transform: translateX(-100%);
         z-index: 1000;
-        max-height: 600px;
+        height: 100vh;
+        max-height: 850px;
         box-shadow: 2px 2px 5px 2px rgba(192, 174, 174, 0.597);
     }
     .dashboard-side-bar::-webkit-scrollbar {
